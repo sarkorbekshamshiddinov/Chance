@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chance — Make a Connection</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <svg viewBox="0 0 100 100" class="logo-icon">
+
+                <!-- Heart -->
+                <path
+                    d="M50 87
+                    C39 78 12 59 12 37
+                    C12 19 25 10 39 15
+                    C45 17 49 22 50 28
+                    C55 15 70 10 82 19
+                    C99 33 86 58 50 87Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+
+                <!-- Infinity -->
+                <path
+                    d="M23 49
+                    C31 35 42 35 50 49
+                    C58 63 69 63 77 49
+                    C69 35 58 35 50 49
+                    C42 63 31 63 23 49Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="4.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+
+            </svg>
+
+            <span>chance<span class="logo-dot">.</span></span>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="#" class="nav-link active" data-page="discover">
+                <span>⌂</span>
+                <span>Home</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="discover">
+                <span>♡</span>
+                <span>Discover</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="matches">
+                <span>♡</span>
+                <span>Matches</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="messages">
+                <span>✉</span>
+                <span>Messages</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="settings">
+                <span>⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-note">
+
+                <svg viewBox="0 0 100 100" class="small-logo">
+
+                    <path
+                        d="M50 87 C39 78 12 59 12 37 C12 19 25 10 39 15 C45 17 49 22 50 28 C55 15 70 10 82 19 C99 33 86 58 50 87Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="5"/>
+
+                    <path
+                        d="M23 49 C31 35 42 35 50 49 C58 63 69 63 77 49 C69 35 58 35 50 49 C42 63 31 63 23 49Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="4.5"
+                        stroke-linecap="round"/>
+
+                </svg>
+
+                <p>Every connection starts with a chance.</p>
+
+            </div>
+
+            <div class="sidebar-footer">
+                Chance Prototype · 18+ Concept
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h1 id="page-title">Welcome to Chance</h1>
+                <p id="page-subtitle">Discover new connections.</p>
+            </div>
+
+            <div class="topbar-profile">
+
+                <div class="topbar-avatar">C</div>
+
+                <div>
+                    <strong id="topbar-name">Chance User</strong>
+                    <span>Demo Account</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- DISCOVER PAGE -->
+
+        <section id="discover-page" class="page-section active">
+
+            <div class="discover-heading">
+
+                <h2>Discover</h2>
+
+                <p>Someone interesting might be one swipe away.</p>
+
+            </div>
+
+
+            <div class="profile-card" id="profile-card">
+
+                <div class="profile-image">
+
+                    <img id="profile-img" src="" alt="Demo profile">
+
+                    <div class="image-overlay"></div>
+
+                    <div class="profile-badge">
+                        ✦ New Connection
+                    </div>
+
+                    <div class="profile-info">
+
+                        <h2 id="profile-name"></h2>
+
+                        <p id="profile-location"></p>
+
+                        <p id="profile-bio"></p>
+
+                        <div id="profile-interests"
+                             class="interests-container">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-actions">
+
+                    <button id="skip-btn" class="action-btn skip-btn">
+                        ✕
+                    </button>
+
+                    <button id="like-btn" class="action-btn like-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MATCHES PAGE -->
+
+        <section id="matches-page" class="page-section">
+
+            <div class="section-heading">
+
+                <h2>Your Matches</h2>
+
+                <p>Connections that started with a chance.</p>
+
+            </div>
+
+
+            <div class="matches-summary">
+
+                <div>
+                    <span class="summary-number" id="matches-count">0</span>
+                    <span class="summary-label">Total Matches</span>
+                </div>
+
+                <span class="summary-heart">♡</span>
+
+            </div>
+
+
+            <div id="matches-grid" class="matches-grid"></div>
+
+        </section>
+
+
+        <!-- MESSAGES PAGE -->
+
+        <section id="messages-page" class="page-section">
+
+            <div class="section-heading">
+
+                <h2>Messages</h2>
+
+                <p>Continue your conversations.</p>
+
+            </div>
+
+
+            <div class="chat-container">
+
+                <div class="conversation-panel">
+
+                    <div class="conversation-title">
+                        <h3>Conversations</h3>
+                    </div>
+
+                    <div id="conversation-list"
+                         class="conversation-list">
+                    </div>
+
+                </div>
+
+
+                <div id="chat-panel" class="chat-panel">
+
+                    <div class="chat-empty">
+
+                        <div class="empty-chat-icon">♡</div>
+
+                        <h3>Your conversations start here</h3>
+
+                        <p>Select a match to open a conversation.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SETTINGS PAGE -->
+
+        <section id="settings-page" class="page-section">
+
+            <div class="section-heading">
+
+                <h2>Settings</h2>
+
+                <p>Personalize your Chance experience.</p>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-header">
+
+                    <div>
+                        <h3>Profile Information</h3>
+                        <p>Manage your demo profile.</p>
+                    </div>
+
+                    <span class="settings-icon">👤</span>
+
+                </div>
+
+
+                <div class="settings-form">
+
+                    <div class="form-group">
+
+                        <label for="settings-name">Display Name</label>
+
+                        <input
+                            type="text"
+                            id="settings-name"
+                            maxlength="30"
+                            placeholder="Enter your name">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="settings-bio">About Me</label>
+
+                        <textarea
+                            id="settings-bio"
+                            maxlength="200"
+                            placeholder="Write something about yourself..."></textarea>
+
+                    </div>
+
+
+                    <button class="settings-save-btn"
+                            id="save-profile-btn">
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- APPEARANCE -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-header">
+
+                    <div>
+                        <h3>Appearance</h3>
+                        <p>Choose your preferred theme.</p>
+                    </div>
+
+                    <span class="settings-icon">🎨</span>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+                        <h4>Dark Mode</h4>
+                        <p>Switch between light and dark themes.</p>
+                    </div>
+
+                    <label class="toggle-switch">
+
+                        <input type="checkbox" id="dark-mode-toggle">
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-header">
+
+                    <div>
+                        <h3>Notifications</h3>
+                        <p>Manage your notification preferences.</p>
+                    </div>
+
+                    <span class="settings-icon">🔔</span>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+                        <h4>Match Notifications</h4>
+                        <p>Get notified when a match occurs.</p>
+                    </div>
+
+                    <label class="toggle-switch">
+
+                        <input type="checkbox"
+                               id="match-notifications"
+                               checked>
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+                        <h4>Message Notifications</h4>
+                        <p>Manage message notification preferences.</p>
+                    </div>
+
+                    <label class="toggle-switch">
+
+                        <input type="checkbox"
+                               id="message-notifications"
+                               checked>
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRIVACY -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-header">
+
+                    <div>
+                        <h3>Privacy</h3>
+                        <p>Manage your demo privacy preferences.</p>
+                    </div>
+
+                    <span class="settings-icon">🔒</span>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+                        <h4>Profile Visibility</h4>
+                        <p>Allow your demo profile to appear in Discover.</p>
+                    </div>
+
+                    <label class="toggle-switch">
+
+                        <input type="checkbox"
+                               id="profile-visibility"
+                               checked>
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT -->
+
+            <div class="settings-card account-card">
+
+                <div class="settings-card-header">
+
+                    <div>
+                        <h3>Account</h3>
+                        <p>Manage your demo session.</p>
+                    </div>
+
+                    <span class="settings-icon">∞</span>
+
+                </div>
+
+
+                <button class="logout-btn" id="logout-btn">
+                    Log Out
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RIGHT PANEL -->
+
+    <aside class="right-panel">
+
+        <div class="right-card reminder-card">
+
+            <div class="right-card-icon">♡</div>
+
+            <h3>A little reminder</h3>
+
+            <p>
+                Every meaningful connection begins with a simple opportunity.
+                Be open to new possibilities.
+            </p>
+
+        </div>
+
+
+        <div class="right-card why-card">
+
+            <h3>Why Chance?</h3>
+
+
+            <div class="feature-item">
+
+                <span>♡</span>
+
+                <div>
+                    <strong>Meaningful Connections</strong>
+                    <p>Discover new possibilities.</p>
+                </div>
+
+            </div>
+
+
+            <div class="feature-item">
+
+                <span>∞</span>
+
+                <div>
+                    <strong>Endless Possibilities</strong>
+                    <p>Every connection matters.</p>
+                </div>
+
+            </div>
+
+
+            <div class="feature-item">
+
+                <span>✦</span>
+
+                <div>
+                    <strong>Simple Experience</strong>
+                    <p>Designed around simplicity.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="right-footer">
+
+            <svg viewBox="0 0 100 100" class="footer-logo">
+
+                <path
+                    d="M50 87 C39 78 12 59 12 37 C12 19 25 10 39 15 C45 17 49 22 50 28 C55 15 70 10 82 19 C99 33 86 58 50 87Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="5"/>
+
+                <path
+                    d="M23 49 C31 35 42 35 50 49 C58 63 69 63 77 49 C69 35 58 35 50 49 C42 63 31 63 23 49Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="4.5"
+                    stroke-linecap="round"/>
+
+            </svg>
+
+            <span>Made with</span>
+
+            <strong>Chance</strong>
+
+        </div>
+
+    </aside>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
